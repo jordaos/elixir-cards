@@ -82,8 +82,10 @@ defmodule Cards do
     # hand = Cards.deal(deck, hand_size)
     
     # do
-    Cards.create_deck
+    {hand, _remaing_deck} = Cards.create_deck
     |> Cards.shuffle # Automatically inject the return for the prev function into the first argument of this function
     |> Cards.deal(hand_size) # The first param was automatically injected by the pipe |>
+    
+    hand
   end
 end
